@@ -1,13 +1,13 @@
 test = {
-  'name': 'Question ckd',
+  'name': 'Question fancy_values',
   'points': 1,
   'suites': [
     {
       'cases': [
         {
           'code': r"""
-          >>> # You need to set the value for 'ckd'
-          >>> 'ckd' in vars()
+          >>> # You need to set the value for 'fancy_values'
+          >>> 'fancy_values' in vars()
           True
           """,
           'hidden': False,
@@ -15,9 +15,9 @@ test = {
         },
         {
           'code': r"""
-          >>> # You haven't changed the value for 'ckd'
+          >>> # You haven't changed the value for 'fancy_values'
           >>> # from its initial state (of ...)
-          >>> ckd is not ...
+          >>> fancy_values is not ...
           True
           """,
           'hidden': False,
@@ -25,15 +25,15 @@ test = {
         },
         {
           'code': r"""
-          >>> isinstance(ckd, pd.DataFrame)
+          >>> isinstance(fancy_values, pd.DataFrame)
           True
-          >>> len(ckd)
-          158
-          >>> list(ckd)[:5] == ['Age',
-          ...                   'Blood Pressure',
-          ...                   'Specific Gravity',
-          ...                   'Albumin',
-          ...                   'Sugar']
+          >>> fancy_values.shape
+          (2, 2)
+          >>> list(fancy_values)
+          ['mean_bp', 'median_age']
+          >>> list(fancy_values.T)
+          ['CKD', 'Not CKD']
+          >>> np.allclose(fancy_values, [[80, 59.0], [71.826087, 46.0]])
           True
           """,
           'hidden': False,
