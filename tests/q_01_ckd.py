@@ -27,8 +27,8 @@ test = {
           'code': r"""
           >>> isinstance(ckd, pd.DataFrame)
           True
-          >>> ckd.shape
-          (158, 26)
+          >>> len(ckd)
+          158
           """,
           'hidden': False,
           'locked': False
